@@ -1,0 +1,29 @@
+{
+  "model": "Multi-Scale Temporal Fusion Speaker Diarization with Uncertainty",
+  "test_metrics": {
+    "overall": {
+      "DER": 0.6332,
+      "JER": 0.6332,
+      "Speaker_F1": 0.1968,
+      "Speaker_Precision": 0.1345,
+      "Speaker_Recall": 0.3668,
+      "Boundary_Precision": 0.0,
+      "Boundary_Recall": 0.0,
+      "Boundary_F1": 0.0
+    },
+    "per_speaker": {
+      "speaker_0": {"F1": 0.0, "Precision": 0.0, "Recall": 0.0},
+      "speaker_1": {"F1": 0.5367, "Precision": 0.3668, "Recall": 1.0},
+      "speaker_2": {"F1": 0.0, "Precision": 0.0, "Recall": 0.0},
+      "speaker_3": {"F1": 0.0, "Precision": 0.0, "Recall": 0.0}
+    }
+  },
+  "training": {
+    "total_epochs": 20,
+    "best_epoch": 9,
+    "best_val_loss": 1.2289,
+    "final_train_loss": 1.2912,
+    "initial_train_loss": 1.3835,
+    "learning_rate": "cosine annealing (0.001 -> 0.00098)"
+  }
+}

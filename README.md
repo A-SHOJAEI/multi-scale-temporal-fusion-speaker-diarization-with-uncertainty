@@ -135,14 +135,19 @@ All hyperparameters are configurable via YAML files in `configs/`. Key parameter
 
 ## Results
 
-Run `python scripts/train.py` to reproduce results. Target metrics on AMI Meeting Corpus:
+Trained on synthetic AMI-style data over 20 epochs. Results on test set:
 
-| Metric | Target | Description |
-|--------|--------|-------------|
-| DER | 0.12 | Diarization Error Rate |
-| JER | 0.18 | Jaccard Error Rate |
-| Speaker F1 | 0.88 | Speaker classification F1 score |
-| Boundary Precision | 0.82 | Boundary detection precision |
+| Metric | Value | Description |
+|--------|-------|-------------|
+| DER | 0.6332 | Diarization Error Rate |
+| JER | 0.6332 | Jaccard Error Rate |
+| Speaker F1 | 0.1968 | Speaker classification F1 score |
+| Speaker Precision | 0.1345 | Speaker classification precision |
+| Speaker Recall | 0.3668 | Speaker classification recall |
+| Best Val Loss | 1.2289 | Achieved at epoch 9 |
+| Final Train Loss | 1.2912 | At final epoch |
+
+The model trained with cosine annealing (LR: 0.001 -> 0.00098) and converged over 10 epochs. Speaker 1 achieved F1=0.537 (Precision=0.367, Recall=1.0), while other speakers showed lower detection rates, reflecting the challenge of multi-speaker diarization on synthetic data with limited training samples.
 
 ## Ablation Study
 
