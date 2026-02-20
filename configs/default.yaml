@@ -1,0 +1,68 @@
+# Default configuration for multi-scale temporal fusion speaker diarization
+
+seed: 42
+
+# Data configuration
+data:
+  data_dir: "./data/ami"
+  segment_length: 10.0
+  sample_rate: 16000
+  feature_type: "mel"
+  batch_size: 16
+  num_workers: 4
+  train_split: 0.7
+  val_split: 0.15
+
+# Model configuration
+model:
+  input_dim: 80
+  hidden_dim: 256
+  num_speakers: 10
+  dropout: 0.1
+  mc_dropout: 0.2
+  mc_samples: 10
+  scales:
+    - kernel_size: 3
+      dilation: 1
+    - kernel_size: 5
+      dilation: 2
+    - kernel_size: 7
+      dilation: 4
+
+# Loss configuration
+loss:
+  speaker_weight: 1.0
+  boundary_weight: 2.0
+  use_focal_loss: true
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+
+# Training configuration
+training:
+  num_epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: "adam"
+  scheduler: "cosine"
+  scheduler_params:
+    T_max: 100
+    eta_min: 0.00001
+  grad_clip: 1.0
+  use_amp: true
+  early_stopping:
+    patience: 15
+    min_delta: 0.0001
+
+# Evaluation configuration
+evaluation:
+  uncertainty_threshold: 0.5
+  boundary_tolerance: 5
+
+# Checkpointing
+checkpoint_dir: "checkpoints"
+results_dir: "results"
+
+# MLflow tracking (optional)
+mlflow:
+  experiment_name: "multi-scale-temporal-fusion-diarization"
+  tracking_uri: null

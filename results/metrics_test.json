@@ -1,0 +1,34 @@
+{
+  "overall": {
+    "DER": 0.6332334332334333,
+    "JER": 0.6332334332334333,
+    "Speaker_F1": 0.1968408033508901,
+    "Speaker_Precision": 0.13451771449773448,
+    "Speaker_Recall": 0.36676656676656677,
+    "Boundary_Precision": 0.0,
+    "Boundary_Recall": 0.0,
+    "Boundary_F1": 0.0
+  },
+  "per_speaker": {
+    "0": {
+      "F1": 0.0,
+      "Precision": 0.0,
+      "Recall": 0.0
+    },
+    "1": {
+      "F1": 0.5366923301822435,
+      "Precision": 0.36676656676656677,
+      "Recall": 1.0
+    },
+    "2": {
+      "F1": 0.0,
+      "Precision": 0.0,
+      "Recall": 0.0
+    },
+    "3": {
+      "F1": 0.0,
+      "Precision": 0.0,
+      "Recall": 0.0
+    }
+  }
+}
